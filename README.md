@@ -1,4 +1,11 @@
-1. PropertyDialog Build a Lightning Component to Override a Standard Action (プロジェクト)
+2. SimilarProperties Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)
+   https://trailhead.salesforce.com/ja/content/learn/projects/workshop-lightning-programmatic
+   1) inline edit
+   2) Event通信
+   3) lightning:recordForm
+   4) （LDS）Lightning データサービスを利用する   
+   
+3. PropertyDialog Build a Lightning Component to Override a Standard Action (プロジェクト)
    https://trailhead.salesforce.com/ja/content/learn/projects/workshop-override-standard-action
    1) Create a Lightning Component
    2) （LDS）Lightning データサービスを利用する
