@@ -1,4 +1,5 @@
-1. expenses 
+1. expenses             -- Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)
+
 2. SimilarProperties    -- Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)
    https://trailhead.salesforce.com/ja/content/learn/projects/workshop-lightning-programmatic
    1) inline edit
