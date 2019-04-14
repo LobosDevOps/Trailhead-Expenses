@@ -1,9 +1,7 @@
 1. expenses             -- Aura コンポーネントの基本(モジュール)
    https://trailhead.salesforce.com/ja/content/learn/modules/lex_dev_lc_basics
-   1) inline edit
-   2) Event通信
-   3) lightning:recordForm
-   4) （LDS）Lightning データサービスを利用する      
+   1) Event通信
+   2) Lightning Component各種の資料　（　次のステップの確認　）      
 
 2. SimilarProperties    -- Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)
    https://trailhead.salesforce.com/ja/content/learn/projects/workshop-lightning-programmatic
