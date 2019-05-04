@@ -22,3 +22,6 @@
    1) カスタムメタデータを利用して、Objectと関連Filedを設定する
    2) AuraとApexを　メータデータからデータを抽出し、画面上に表示
    3)（LDS）Lightning データサービスを利用する
+   
+5. Aura Super Badge     -- Aura Components Specialist
+   https://trailhead.salesforce.com/ja/content/learn/superbadges/superbadge_lcf
