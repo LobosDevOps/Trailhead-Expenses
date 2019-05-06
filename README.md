@@ -25,3 +25,5 @@
    
 5. Aura Super Badge     -- Aura Components Specialist
    https://trailhead.salesforce.com/ja/content/learn/superbadges/superbadge_lcf
+   1) https://github.com/manuhackzzz/Superbadge-LCF/tree/master/aura/Map
+   2) https://github.com/anilsomasundaran/Lightning-Component-Framework-Specialist/tree/master/aura/BoatTile
