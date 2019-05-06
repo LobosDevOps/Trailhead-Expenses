@@ -9,8 +9,7 @@
     <aura:method name="search" access="global" action="{!c.doSearch}" >
         <aura:attribute name="boatTypeId" type="String"/>
     </aura:method>
-    
-    <aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect}"/>
+    <!--<aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect}"/>-->
     
     <lightning:layout multipleRows="true" horizontalAlign="center">
         <aura:iteration items="{!v.boats}" var="boat">
