@@ -12,7 +12,7 @@
     <p><c:helloMessage message="{!msg}"/></p>
 </aura:iteration>
 
-If Else
+・　If Else
 <aura:if isTrue="{!$Browser.isIPhone}">
     <p><c:helloMessage message="{!v.messages[0]}"/></p>
     <aura:set attribute="else">
