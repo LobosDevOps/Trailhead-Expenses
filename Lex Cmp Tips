@@ -1,4 +1,4 @@
-・　List
+1. List
 <aura:attribute name="messages" type="List"
         default="['You look nice today.',
             'Great weather we\'re having.',
@@ -12,7 +12,7 @@
     <p><c:helloMessage message="{!msg}"/></p>
 </aura:iteration>
 
-・　If Else
+2. If Else
 <aura:if isTrue="{!$Browser.isIPhone}">
     <p><c:helloMessage message="{!v.messages[0]}"/></p>
     <aura:set attribute="else">
