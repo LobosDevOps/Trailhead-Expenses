@@ -6,3 +6,6 @@
         component.set("v.message", btnMessage);     // update our message
     }
 })
+
+２． Json
+JSON.stringify(yourObject)
