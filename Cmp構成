@@ -6,8 +6,11 @@
       2)_1 lightning:layoutItem size=6
         2)_1-1 div
           2)_1-1-1 fieldset
-            2)_1-1-1-1 legend
-            
+            2)_1-1-1-1 legend            
             2)_1-1-1-2 form
               2)_1-1-1-2_1 input text
-              2)_1-1-1-2_1 input number
+              2)_1-1-1-2_2 input number
+              2)_1-1-1-2_3 input text
+              2)_1-1-1-2_4 input date
+              2)_1-1-1-2_5 input checkbox
+              2)_1-1-1-2_6 button
