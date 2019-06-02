@@ -1,1 +1,13 @@
-
+1. Expenses
+   1) lightning:layout
+      1)_1 lightning:layoutItem
+      1)_2 lightning:layoutItem
+   2) lightning:layout
+      2)_1 lightning:layoutItem size=6
+        2)_1-1 div
+          2)_1-1-1 fieldset
+            2)_1-1-1-1 legend
+            
+            2)_1-1-1-2 form
+              2)_1-1-1-2_1 input text
+              2)_1-1-1-2_1 input number
