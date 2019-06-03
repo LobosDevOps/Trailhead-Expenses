@@ -7,5 +7,13 @@
     }
 })
 
-２． Json
-JSON.stringify(yourObject)
+２． Error check
+    var validExpense = component.find('expenseform').reduce(function (validSoFar, inputCmp){
+        //Displays error messages for invalid fields
+        inputCmp.showHelpMessageIfInvalid();
+        return validSoFar && inputCmp.get('v.validity').valid;
+    }, true);
+    //If pass error checking
+    if(validExpense){
+        ...
+    }
