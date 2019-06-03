@@ -19,3 +19,6 @@
         <p><c:helloMessage message="{!v.messages[1]}"/></p>
     </aura:set>
 </aura:if>
+
+3. 固有属性のSet
+<aura:set attribute="footer">
