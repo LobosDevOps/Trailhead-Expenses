@@ -1,0 +1,4 @@
+1. Expenses
+  1) console.log("Create expense: " + JSON.stringify(newExpense) );
+  2) var theExpenses = component.get("v.expenses");
+     var newExpense = JSON.parse(JSON.stringify(expense));
