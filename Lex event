@@ -1,0 +1,30 @@
+1. Expenses
+ 1) new event create
+    <aura:event type="COMPONENT">
+      <aura:attribute name="expense" type="Expense__c" />
+    </aura:event>
+ 2) 子Componentに　EventをResigest、JsでFire
+ 　　Cmp：　<aura:registerEvent name="updateExpense" type="c:expensesItemUpdate" />
+   　　　　※name="updateExpense"　は親と一致することが必要
+    Js：　　clickReimbursed : function(component, event, helper) {
+              var expense = component.get("v.expense");
+              var updateEvent = component.getEvent("updateExpense");
+              updateEvent.setParams({
+                  "expense" : expense
+              });
+              updateEvent.fire();
+          },
+  3) 親Componentに　handlerを作成　eventを指定
+      Cmp：　<aura:handler name="updateExpense" event="c:expensesItemUpdate" 
+                action="{! c.handleUpdateExpense}" />　              
+      Js：   saveExpense : function(component, expense, callback) {
+                var action = component.get("c.saveExpense");
+                action.setParams({
+                    "expense": expense
+                });
+                if(callback){
+                    action.setCallback(this, callback);
+                }
+                $A.enqueueAction(action);
+            },　　
+            ※　expense：　event.getParam("expense")
