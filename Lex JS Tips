@@ -17,3 +17,6 @@
     if(validExpense){
         ...
     }
+    
+3. Method
+    https://developer.salesforce.com/blogs/developer-relations/2017/04/lightning-inter-component-communication-patterns.html
