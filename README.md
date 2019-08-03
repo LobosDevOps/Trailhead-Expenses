@@ -25,8 +25,9 @@
    
 5. Aura Super Badge     -- Aura Components Specialist
    https://trailhead.salesforce.com/ja/content/learn/superbadges/superbadge_lcf
-   1) https://github.com/manuhackzzz/Superbadge-LCF/tree/master/aura/Map
-   2) https://github.com/anilsomasundaran/Lightning-Component-Framework-Specialist/tree/master/aura/BoatTile
+   1) https://www.cnblogs.com/zero-zyq/p/10489626.html
+   2) https://github.com/manuhackzzz/Superbadge-LCF/tree/master/aura/Map
+   3) https://github.com/anilsomasundaran/Lightning-Component-Framework-Specialist/tree/master/aura/BoatTile
    
 6. AccountLocator       -- Develop an Account Geolocation App with Aura Components(プロジェクト)
    https://trailhead.salesforce.com/ja/content/learn/projects/develop-account-geolocation-app-with-aura-components
