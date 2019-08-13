@@ -1,10 +1,10 @@
-1. expenses             -- Aura コンポーネントの基本(モジュール)
+1. expenses             -- Aura コンポーネントの基本(モジュール)　　整理済
    https://trailhead.salesforce.com/ja/content/learn/modules/lex_dev_lc_basics
    1) Event通信
    2) Js Validationチェック
    3) Lightning Component各種の資料　（　次のステップの確認　）      
 
-2. SimilarProperties    -- Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)
+2. SimilarProperties    -- Lightning コンポーネントを使用した柔軟なアプリケーションの構築(プロジェクト)　整理済
    https://trailhead.salesforce.com/ja/content/learn/projects/workshop-lightning-programmatic
    1) inline edit
    2) Event通信
@@ -29,7 +29,7 @@
    2) https://github.com/manuhackzzz/Superbadge-LCF/tree/master/aura/Map
    3) https://github.com/anilsomasundaran/Lightning-Component-Framework-Specialist/tree/master/aura/BoatTile
    
-6. AccountLocator       -- Develop an Account Geolocation App with Aura Components(プロジェクト)
+6. AccountLocator       -- Develop an Account Geolocation App with Aura Components(プロジェクト)　整理済
    https://trailhead.salesforce.com/ja/content/learn/projects/develop-account-geolocation-app-with-aura-components
    1) Create the Account Locator Component
    2) Create the Account Search Controller By Sosl
