@@ -11,7 +11,7 @@
    3) lightning:recordForm
    4) （LDS）Lightning データサービスを利用する   
    
-3. PropertyDialog       -- Build a Lightning Component to Override a Standard Action (プロジェクト)
+3. PropertyDialog       -- Build a Lightning Component to Override a Standard Action (プロジェクト) 整理済
    https://trailhead.salesforce.com/ja/content/learn/projects/workshop-override-standard-action
    1) Create a Lightning Component
    2) （LDS）Lightning データサービスを利用する
