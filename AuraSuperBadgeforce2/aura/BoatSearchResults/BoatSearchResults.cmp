@@ -1,0 +1,22 @@
+<aura:component>
+    <aura:attribute name="boats" type="Boat__c[]"/>
+    <aura:attribute name="selectedBoatId" type="String" default="null" description="set selected to boatTile"/>
+
+    <aura:method name="setBoats" access="global" action="{!c.setBoats}" >
+        <aura:attribute name="boatResults" type="Boat__c[]"/>
+    </aura:method>
+
+    <aura:handler  name="sendSelectBoatId" event="c:BoatSelectEvt" action="{!c.handleSetSelectedBoat}"/>
+
+    <lightning:card title="Matching Boat">
+        <div class="slds-p-horizontal_small">
+            <lightning:layout multipleRows="true">
+                <aura:iteration items="{!v.boats}" var="boat">
+                    <lightning:layoutItem padding="around-small"  size="3">
+                        <c:BoatTile boat="{!boat}" selected="{!boat.Id == v.selectedBoatId ? true : false}"/>
+                    </lightning:layoutItem>
+                </aura:iteration>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>	

@@ -1,0 +1,5 @@
+<aura:component>
+    <lightning:card title="AddBoatReview">
+
+    </lightning:card>
+</aura:component>	

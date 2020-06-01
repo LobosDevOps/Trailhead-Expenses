@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="send selected boatid">
+    <aura:attribute  name="selectedBoatId" type="String"/>
+</aura:event>

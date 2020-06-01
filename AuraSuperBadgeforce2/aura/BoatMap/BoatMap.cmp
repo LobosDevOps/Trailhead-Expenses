@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- attributes -->
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="11"/>
+
+    <!-- handlers -->
+    <aura:handler event="c:BoatSelectedAppEvt"  action="{!c.handleBoatSelectedAppEvt}"/>
+    
+    <!-- component -->
+    <aura:if isTrue="{!v.mapMarkers != null}">
+        <article class="slds-card">
+            <lightning:map
+                mapMarkers="{!v.mapMarkers}"
+                zoomLevel="{!v.zoomLevel}"
+                title="BoatMap">
+            </lightning:map>
+        </article>
+    </aura:if>
+	
+</aura:component>	
