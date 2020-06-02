@@ -1,5 +1,5 @@
-<aura:component implements="force:lightningQuickActionWithoutHeader">
-        <aura:attribute name="loading" type="Boolean" default="false" />
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="BoatSearchResults">
+        <!-- <aura:attribute name="loading" type="Boolean" default="false" />
 
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
 
@@ -63,5 +63,29 @@
         <aura:if isTrue="{!v.loading}">
             <lightning:spinner alternativeText="Loading" />
         </aura:if>
+    </lightning:recordEditForm> -->
+
+    <aura:attribute name="loading" type="Boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="description" type="String" />
+
+    {!v.recordId}
+    <lightning:recordEditForm aura:id="editform"
+                              recordId="{!v.recordId}" 
+                              objectApiName="Boat__c"
+                              onsubmit="{!c.handleSubmit}">
+
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning:inputField fieldName="Name" />
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning:inputField fieldName="Description__c" value="{!v.description}" class="slds-hidden" />
+            </div>
+        </div>
+
+        <lightning:button variant="brand" label="保存" type="submit" aura:id="save"/>
+
     </lightning:recordEditForm>
+
 </aura:component>	

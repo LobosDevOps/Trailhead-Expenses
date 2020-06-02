@@ -7,16 +7,32 @@
      * @return 全て正常ならtrue
      */
     handleFormSubmit: function(component, helper) {
-// console.log("here 1");
-        var vaildationFailReason = helper.onValidationCheck(component, helper);
-        if (!vaildationFailReason) {
-            component.set('v.loading', true);
-            component.find("editform").submit();  
+ console.log("here 1");
+        // var vaildationFailReason = helper.onValidationCheck(component, helper);
+        // if (!vaildationFailReason) {
+        //     component.set('v.loading', true);
 
-        } else {
-            component.find('newBoatMessage').setError(vaildationFailReason);
-            component.set('v.loading', false); 
-        }
+            //test
+
+
+            let selectBoatType = "All Types";
+// console.log("handleSearch selectBoatType : " + selectBoatType);
+        const method = "c.searchBoatResults";
+        const params = {boatType : selectBoatType};
+        let callback = function(response) {
+            component.set('v.description', "aabb1");
+
+            component.find("editform").submit();  
+            $A.get("e.force:closeQuickAction").fire();
+        };
+        helper.callAction(component, method ,params, callback);
+
+
+
+        // } else {
+        //     component.find('newBoatMessage').setError(vaildationFailReason);
+        //     component.set('v.loading', false); 
+        // }
     },
 
     onValidationCheck: function(component, helper) {
@@ -35,5 +51,18 @@
             } 
         });
         return vaildationFailReason;
-    }
+    },
+        //Common Process call Apex
+        callAction : function(component, method ,params, callback) {
+            //server-side action
+            let action = component.get(method);
+            if (params) {
+                action.setParams(params);
+            }
+            //Set any optional callback and enqueue the action
+            if (callback) {
+                action.setCallback(this, callback);
+            }
+            $A.enqueueAction(action);
+        },
 })
