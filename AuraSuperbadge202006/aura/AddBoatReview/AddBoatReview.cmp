@@ -1,0 +1,47 @@
+<aura:component extends="c:BoatCommonCmp">
+    <aura:attribute name="boat" type="Boat__c" />
+    <aura:attribute name="rating" type="Integer" />
+
+    <aura:registerEvent  name="boatReviewAddedEvt" type="c:BoatReviewAddedEvt"/>
+
+    <lightning:recordEditForm aura:id="editform" 
+                              objectApiName="BoatReview__c" 
+                              onsuccess="{!c.handleSuccess}"
+                              onsubmit="{!c.handleSubmit}" 
+                              onerror="{!c.handleError}">
+        
+        <lightning:messages aura:id="addReviewMessage"/>
+
+        <lightning:card iconName="utility:anchor">
+            <aura:set attribute="title">
+                <aura:if isTrue="{!v.boat != null}"> 
+                    {!v.boat.Contact__r.Name}'s Boat Review
+                    <aura:set attribute="else">
+                        Please select a Boat.
+                    </aura:set>
+                </aura:if>
+            </aura:set>
+
+            <aura:if isTrue="{!v.boat != null}">
+                <div class="slds-grid">
+                    <div class="slds-col_padded slds-size_1-of-1">
+                        <lightning:inputField fieldName="Name" aura:id="newCommentField" required="true"/>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col_padded slds-size_1-of-1">
+                        <lightning:inputField fieldName="Comment__c" aura:id="newCommentField" required="true"/>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col_padded slds-size_1-of-1">
+                        <c:FiveStarRating rateValue="{!v.rating}" aura:id="fiveStarRating"/>
+                    </div>
+                </div>
+                <div class="slds-align--absolute-center">
+                    <lightning:button iconName="utility:save" label="Submit" type="Submit" />
+                </div>
+            </aura:if>
+        </lightning:card>
+    </lightning:recordEditForm>
+</aura:component>

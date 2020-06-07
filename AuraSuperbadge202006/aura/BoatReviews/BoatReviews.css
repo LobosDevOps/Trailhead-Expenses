@@ -1,0 +1,10 @@
+.THIS .scrollerSize {
+    height: 300px;
+}
+.THIS .reviewTitle {
+    font-weight: bold;
+    display: block;
+}
+.THIS .reviewComment {
+    color: grey;
+}

@@ -1,0 +1,13 @@
+<aura:component controller="PickListController" access="global">
+    <aura:attribute name="sObjectName" type="String" required="true" description="SFDC Sobject"/>
+    <aura:attribute name="fieldName" type="String"  required="true" description="SFDC field name"/>
+    <aura:attribute name="type" type="String"  required="true" description="fromSchema or fromData"/>
+
+    <aura:attribute name="addOption" type="String" description="add the top option just as なし "/>
+    <aura:attribute name="condition" type="String" description="only for fromData. sql condition "/>
+    <aura:attribute name="orderBy" type="String"  description="only for fromData. sql orderBy "/>
+
+    <aura:attribute name="picklistValues" type="Object" description="return value"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+</aura:component>

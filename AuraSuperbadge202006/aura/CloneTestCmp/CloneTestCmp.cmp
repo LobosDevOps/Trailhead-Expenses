@@ -1,0 +1,13 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:attribute name="recordId" type="String" />
+
+    <lightning:recordForm
+        aura:id="myForm"
+        recordId="{! v.recordId}"
+        objectApiName="Account"
+        layoutType="Full"
+        mode="edit" 
+        onsubmit="{!c.handleSubmit}"/>
+        <!-- onload="{!c.handleLoad}"  /> -->
+
+</aura:component>	

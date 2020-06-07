@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- attributes -->
+    <aura:attribute name="selectedTabId" type="String"/>
+    <aura:attribute name="boat" type="Boat__c"/>
+
+    <!-- handlers -->
+    <!-- Boat selected app event -->
+    <aura:handler event="c:BoatSelectedAppEvt"  action="{!c.handleBoatSelectedAppEvt}"/>
+    <!-- review cmp event -->
+    <aura:handler name="boatReviewAddedEvt" event="c:BoatReviewAddedEvt" action="{!c.handleSetSelectedTab}"/>
+
+    <!-- component -->
+    <lightning:tabset variant="scoped" selectedTabId="{!v.selectedTabId}" aura:id="details">
+        <lightning:tab label="Details" id="details" >
+            <c:BoatDetail boat="{!v.boat}" />
+        </lightning:tab>
+        <lightning:tab label="Reviews" id="boatreviewtab" >
+            <c:BoatReviews boat="{!v.boat}" aura:id="boatReviews"/>
+        </lightning:tab>
+        <lightning:tab label="Add Review" id="addReview" >
+            <c:AddBoatReview boat="{!v.boat}" />
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>	

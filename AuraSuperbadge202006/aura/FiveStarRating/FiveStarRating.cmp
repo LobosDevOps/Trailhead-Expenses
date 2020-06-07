@@ -1,0 +1,16 @@
+<aura:component>
+    <aura:attribute name="rateValue" type="Integer"  default='0'/>
+    <aura:attribute name="readonly" type="boolean" default='false' />
+
+    <aura:handler name="change" value="{!v.rateValue}" action="{!c.onValueChange}"/>
+
+    <aura:method name="clearRating" access="global" action="{!c.clearRating}" >
+    </aura:method>
+
+    <ltng:require styles="{!$Resource.fivestar + '/rating.css'}" 
+                  scripts="{!$Resource.fivestar + '/rating.js'}" 
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+
+    <ul class="{!v.readonly ? 'readonly c-rating' : 'c-rating'}" aura:id="ratingarea" />
+
+</aura:component>	

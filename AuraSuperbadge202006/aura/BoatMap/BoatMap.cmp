@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- attributes -->
+    <aura:attribute name="showFlag" type="Boolean"/>
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="11"/>
+
+    <!-- handlers -->
+    <aura:handler event="c:BoatSelectedAppEvt"  action="{!c.handleBoatSelectedAppEvt}"/>
+    
+    <!-- component -->
+    <lightning:card title="Boat Map">
+        <aura:if isTrue="{!v.showFlag}">
+            <article class="slds-card">
+                <lightning:map
+                    mapMarkers="{!v.mapMarkers}"
+                    zoomLevel="{!v.zoomLevel}"
+                    title="BoatMap">
+                </lightning:map>
+            </article>
+            <aura:set attribute="else">
+                <div class="slds-m-around_medium"> Please select a boat.</div>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>	

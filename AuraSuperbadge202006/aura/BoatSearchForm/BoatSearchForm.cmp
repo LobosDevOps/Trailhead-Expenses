@@ -1,0 +1,46 @@
+<aura:component>
+    <!-- <aura:attribute name="options" type="List" default="[
+        {'label': 'All Types', 'value': 'All Types'},
+        {'label': 'New', 'value': 'new'},
+        {'label': 'In Progress', 'value': 'inProgress'},
+        {'label': 'Finished', 'value': 'finished'},
+        ]"/> -->
+    <aura:attribute name="options" type="List" required="true"/>
+    <aura:attribute name="selected" type="String"  required="true"/>
+    <aura:attribute name="showNewBtn" type="Boolean" default="false"/>
+    <aura:attribute name="boats" type="List"/>
+
+    <!-- Component event send select BoatType -->
+    <aura:registerEvent  name="sendSelectBoatType" type="c:boatSearchResultEvt"/>
+    <!-- Application event send select Boat -->
+    <aura:registerEvent  name="sendSelectedBoat" type="c:BoatSelectedAppEvt"/>
+
+    <!-- get picklist by data -->
+    <!-- <aura:handler  name="boatCreateedToSearch" event="c:BoatCreateedToSearchEvt" action="{!c.handleSearch}"/> -->
+    <aura:handler event="c:BoatCreateedToSearchEvt"  action="{!c.handleSearch}"/>
+
+    <!-- Create new boat -->
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <lightning:card title="Find a Boat">
+        <div class="slds-p-horizontal_small">
+            <lightning:layout horizontalAlign="center">
+                <lightning:layoutItem padding="around-small">
+                    <lightning:combobox  aura:id="boatType" name="boatType" 
+                        variant="label-hidden" 
+                        value="{! v.selected }"
+                        placeholder="Select BoatType" 
+                        options="{! v.options }" 
+                        onchange="{! c.handleChange }"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small">
+                    <lightning:button variant="brand" label="Search" onclick="{! c.handleSearch }"/>
+                    <aura:if isTrue="{!v.showNewBtn}">
+                        <lightning:button variant="Neutral" label="New" onclick="{! c.onFormNew }"/>
+                    </aura:if>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>
+	
