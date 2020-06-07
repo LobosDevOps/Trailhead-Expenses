@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Find a Boat">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item padding="around-small">
+                    <lightning-combobox name="boatType" 
+                        variant="label-hidden" 
+                        value={selected}
+                        placeholder="Select BoatType" 
+                        options={options} 
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button variant="brand" label="Search" onclick={handleSearch}></lightning-button>
+                    <template if:true={showNewBtn}>
+                        <lightning-button variant="Neutral" label="New" onclick={onFormNew}></lightning-button>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

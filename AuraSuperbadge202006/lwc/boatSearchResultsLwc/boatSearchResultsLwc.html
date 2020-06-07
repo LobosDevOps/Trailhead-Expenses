@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Matching Boat">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows="true">
+                <template for:each={matchedboats} for:item="boat">
+                    <lightning-layout-item key={boat.Id} padding="around-small" size="3">
+                        <c-boat-tile-lwc boat={boat} selected={selectedBoatId} onboatselected={handleBoatselected}></c-boat-tile-lwc>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

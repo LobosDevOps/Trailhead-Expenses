@@ -1,0 +1,13 @@
+<template>
+    <lightning-tabset variant="scoped" active-tab-value={selectedTabId}>
+        <lightning-tab label="Details" value="details" >
+            <c-boat-detail-lwc boat={boat}></c-boat-detail-lwc>
+        </lightning-tab>
+        <lightning-tab label="Reviews" value="boatreviewtab" onactive={refreshBoatReviews}>
+            <c-boat-reviews-lwc boat={boat} data-id="boatReviews"></c-boat-reviews-lwc>
+        </lightning-tab>
+        <lightning-tab label="Add Review" value="addReview" >
+            <c-add-boat-review-lwc boat={boat} oncommentadded={setSelectedTab}></c-add-boat-review-lwc>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

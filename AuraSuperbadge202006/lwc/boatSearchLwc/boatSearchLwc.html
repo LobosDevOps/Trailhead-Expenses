@@ -1,0 +1,31 @@
+<template>
+        <!-- <aura:attribute name="options" type="List" description="BoatSearchForm combobox options"/>
+    <aura:attribute name="selected" type="String" description="BoatSearchForm combobox selected"/>
+
+    <aura:attribute name="boats" type="List"/>
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:handler  name="sendSelectBoatType" event="c:boatSearchResultEvt" action="{!c.handleSearch}"/>
+
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12">
+            <c:BoatSearchForm options="{! v.options}" selected="{! v.selected}"/>
+            <br/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12">
+            <c:BoatSearchResults aura:id="BSRcmp"/>
+        </lightning:layoutItem>
+    </lightning:layout> -->
+
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12">
+            <c-boat-search-form-lwc options={options} selected={selected} onsendselectedtype={setBoatResults}></c-boat-search-form-lwc>
+            <br/>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <c-boat-search-results-lwc matchedboats={matchedboats}></c-boat-search-results-lwc>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

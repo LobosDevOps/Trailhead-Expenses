@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Boat map">
+        <template if:true={showFlag}>
+            <article class="slds-card">
+                <lightning-map
+                    map-markers={mapMarkers}
+                    zoom-level={zoomLevel}
+                    markers-title="Boat Map">
+                </lightning-map>
+            </article>
+        </template>
+    </lightning-card>
+</template>

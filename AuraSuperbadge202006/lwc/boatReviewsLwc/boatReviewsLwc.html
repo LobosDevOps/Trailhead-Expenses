@@ -1,0 +1,102 @@
+<template>
+    <lightning-card icon-name="utility:anchor" title={boatTitle}>
+        <template if:true={_boat}> 
+            <template if:false={showReviews}> 
+                No Reviews Available
+            </template>
+            <template if:true={showReviews}> 
+                <div class="scrollable scrollerSize uiScrollerWrapper" data-aura-class="uiScrollerWrapper">
+                    <div class="slds-feed slds-m-around_medium">
+                        <ul class="slds-feed__list">
+                            <template for:each={boatReviews} for:item="boatReview">
+                                <li key={boatReview.Id} class="slds-feed__item">
+
+                                    <header class="slds-post__header slds-media">
+                                        <div class="slds-media__figure">
+                                            <img alt="Image" src={boatReview.CreatedBy.SmallPhotoUrl} title="" />
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                                <p>
+                                                    <a href="javascript:void(0)" onclick={onUserInfoClick} value={boatReview.CreatedBy.Id}>
+                                                    {boatReview.CreatedBy.Name}
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <p class="slds-text-body_small">
+                                                <lightning-formatted-date-time 
+                                                    value={boatReview.CreatedDate} 
+                                                    year="numeric" month="short" day="numeric"  
+                                                    hour="2-digit" minute="2-digit" hour12="true"></lightning-formatted-date-time>
+                                            </p>
+                                        </div>
+                                    </header>
+                                    <div class="slds-post__content slds-text-longform">
+                                        <div class="reviewTitle">
+                                            <lightning-formatted-text value={boatReview.Name}></lightning-formatted-text>
+                                        </div>
+                                        <div class="reviewComment">
+                                            <lightning-formatted-rich-text value={boatReview.Comment__c}></lightning-formatted-rich-text>
+                                        </div>
+                                    </div>
+                                    <footer class="slds-post__footer">
+                                        <!-- <c:FiveStarRating aura:id="FiveStarRating" rateValue="{!boatReview.Rating__c}" readonly="true"/> -->
+                                    </footer>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>                   
+                </div>
+                
+            </template>
+        </template>
+    </lightning-card>
+</template>
+<!-- 
+    <lightning:card iconName="utility:anchor">
+
+
+
+
+                                <header class="slds-post__header slds-media">
+                                    <div class="slds-media__figure">
+                                        <img alt="Image" src="{!boatReview.CreatedBy.SmallPhotoUrl}" title="" />
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                            <p>
+                                                <a href="javascript:void(0)" onclick="{!c.onUserInfoClick}" data-userid="{!boatReview.CreatedBy.Id}">
+                                                {!boatReview.CreatedBy.Name}
+           
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <p class="slds-text-body_small">
+                                            <lightning:formattedDateTime value="{!boatReview.CreatedDate}" 
+                                                year="numeric" month="short" day="numeric"  
+                                                hour="2-digit" minute="2-digit" hour12="true"/>
+                                        </p>
+                                    </div>
+                                </header>
+                                <div class="slds-post__content slds-text-longform">
+                                    <div class="reviewTitle">
+                                        <lightning:formattedText value="{!boatReview.Name}"></lightning:formattedText>        
+                                    </div>
+                                    <div class="reviewComment">
+                                        <lightning:formattedRichText value="{!boatReview.Comment__c}"></lightning:formattedRichText>
+                                    </div>
+                                </div>
+
+                                <footer class="slds-post__footer">
+
+                                </footer>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+                </ui:scrollerWrapper>
+
+
+            </aura:if>
+        </aura:if>
+    </lightning:card> -->

@@ -1,0 +1,42 @@
+<template>
+    <lightning-card icon-name="utility:anchor" title={boatTitle}>
+        <template if:true={boat}> 
+            <lightning-button label="Full Details" slot="actions" onclick={handlerFullDetails}></lightning-button>
+
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="slds-p-horizontal--small">
+                        <div class="boatproperty">
+                            <span class="label">Boat Name: </span>
+                            <span class="value">{boat.Name}</span>
+                        </div>
+                        <div class="boatproperty">
+                            <span class="label">Type:</span>
+                            <span class="value">{boat.BoatType__r.Name}</span>
+                        </div>
+                        <div class="boatproperty">
+                            <span class="label">Length:</span>
+                            <span class="value"> {boat.Length__c}ft</span>
+                        </div>
+                        <div class="boatproperty">
+                            <span class="label">Est. Price:</span>
+                            <span class="value">
+                                <lightning-formatted-number value={boat.Price__c} format-style="currency"
+                                currency-code="USD" currency-display-as="symbol"></lightning-formatted-number>
+                            </span>
+                        </div>
+                        <div class="boatproperty">
+                            <span class="label">Description:</span>
+                            <span class="value">
+                                <lightning-formatted-text value={boat.Description__c}></lightning-formatted-text>
+                            </span>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div style={backgroundImage} class="imageview"></div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>
