@@ -14,10 +14,79 @@
                 <lightning-layout-item padding="around-small">
                     <lightning-button variant="brand" label="Search" onclick={handleSearch}></lightning-button>
                     <template if:true={showNewBtn}>
-                        <lightning-button variant="Neutral" label="New" onclick={onFormNew}></lightning-button>
+                        <lightning-button variant="Neutral" label="New" onclick={handleShowCreateBoat}></lightning-button>
                     </template>
                 </lightning-layout-item>
             </lightning-layout>
         </div>
     </lightning-card>
+
+    <c-modal header={newBoatHeader}>
+        <!-- body start -->
+        <lightning-record-edit-form
+            object-api-name="Boat__c"
+            onsuccess={handleSuccess}
+            onerror={handleError}>
+
+            <lightning-messages data-id="newBoatMessage"></lightning-messages>
+             
+            <div class="slds-grid">
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Name" required></lightning-input-field>
+                </div>
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="BoatType__c" value={selected}></lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Contact__c"></lightning-input-field>
+                </div>
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Year_Built__c" ></lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Price__c" required></lightning-input-field>
+                </div>
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Length__c"></lightning-input-field>
+                </div>
+            </div>
+            
+            <div class="slds-grid">
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Geolocation__c"></lightning-input-field>
+                </div>
+                <div class="slds-col_padded slds-size_1-of-2">
+                    <lightning-input-field field-name="Picture__c"></lightning-input-field>
+                </div>
+            </div>
+            
+            <div class="slds-grid">
+                <div class="slds-col_padded slds-size_1-of-1">
+                    <lightning-input-field field-name="Description__c" ></lightning-input-field>
+                </div>
+            </div>   
+        </lightning-record-edit-form>
+
+        <!-- body end -->
+        <div slot="footer">
+            <lightning-button
+                label="Cancel"
+                variant="neutral"
+                onclick={handleCancelModal}
+            ></lightning-button>
+            <lightning-button
+                label="Save"
+                variant="brand"
+                onclick={handleSaveModal}
+            ></lightning-button>
+        </div>
+        <template:if if:true={loading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template:if>
+    </c-modal>
+
 </template>
